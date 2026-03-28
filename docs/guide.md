@@ -48,12 +48,14 @@ DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_DATABASE=budget_manager
 DB_USERNAME=postgres
-DB_PASSWORD=postgres
+DB_PASSWORD=change_me
 ```
 
 These values were written to:
 - `.env`
 - `.env.example`
+
+Replace `DB_PASSWORD` with your own local password before starting the database container.
 
 ## Add Docker Compose For PostgreSQL
 
@@ -69,9 +71,9 @@ Service details:
 - container name: `budget-manager-postgres`
 - image: `postgres:16-alpine`
 - host port: `5432`
-- database: `budget_manager`
-- username: `postgres`
-- password: `postgres`
+- database: uses `DB_DATABASE` from `.env`
+- username: uses `DB_USERNAME` from `.env`
+- password: uses `DB_PASSWORD` from `.env`
 
 Persistent storage is handled with the named volume `postgres_data`.
 
