@@ -2,7 +2,7 @@
 :: is PHP's scope resolution operator — it calls a static method, meaning you call it on the class itself, not on an instance. Compare:
 
 # ->
-User::all();       // static — no object needed, called on the class
+User::all();       // static method — no object needed, called on the class
 $user->delete();   // instance — called on a specific object $user
 
 
