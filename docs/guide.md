@@ -32,6 +32,11 @@ php artisan key:generate --ansi
 Result:
 - `APP_KEY` was written to `.env`
 
+Note:
+- In many fresh Laravel installs, `APP_KEY` is generated automatically during project creation.
+- The `php artisan key:generate --ansi` command is still documented as a fallback when `.env` has no key.
+- Avoid running `key:generate` on an already active app unless necessary, because changing `APP_KEY` can invalidate encrypted data (for example sessions and remember tokens).
+
 ## 1.4 Install Frontend Dependencies
 
 Laravel ships with frontend build tooling in the project skeleton, including `package.json` and Vite config. That means Node dependencies still need to be installed even though the backend is PHP.
